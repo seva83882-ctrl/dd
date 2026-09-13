@@ -227,6 +227,7 @@
 }
 
 @media (max-width: 768px) {
+  /* 1. Хеадер */
   .logo-tail {
     display: none;
   }
@@ -246,12 +247,70 @@
     white-space: nowrap;
   }
 
-  .dock-inner {
-    padding-left: 18px !important;
-    padding-right: 20px !important;
+  /* 2. Hero: ставим фото ВНИЗ под текст */
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 28px !important;
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
   }
 
-  .btn-max-cta {
-    margin-right: 4px; 
+  .hero-text-col {
+    width: 100% !important;
+  }
+
+  .hero-media-col {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Карточка фото мастера: аккуратный 3:4 по центру под текстом */
+  .hero-image-frame {
+    width: 260px !important;
+    max-width: 260px !important;
+    height: 346px !important;
+    aspect-ratio: 3 / 4 !important;
+    border-radius: 18px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 25% !important;
+    transform: scale(1.08) !important;
+  }
+
+  /* 3. Услуги (Прайс): СТРОГО В 1 СТОЛБИК */
+  .price-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .price-col {
+    width: 100% !important;
+  }
+
+  /* 4. Портфолио */
+  .portfolio-strip {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 10px !important;
+  }
+
+  .gallery-cell:first-child {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  .gallery-cell {
+    aspect-ratio: 1 / 1 !important;
   }
 }
