@@ -105,7 +105,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;              /* Строго физическая ширина экрана */
+  max-width: 100%;           /* Запрет вылезать хоть на 1 пиксель */
+  box-sizing: border-box;
   height: var(--dock-height);
   background: var(--bg-glass);
   backdrop-filter: blur(24px) saturate(160%);
@@ -115,18 +117,19 @@
   z-index: var(--z-sticky);
   display: flex;
   align-items: center;
+  overflow: hidden;          /* Гарантирует, что ничего не вылезет наружу */
 }
 
-/* На ПК держится строго по центру контента */
 .dock-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: var(--site-width);
+  max-width: var(--site-width); /* На ПК держит ширину 1040px по центру */
   margin: 0 auto;
-  padding: 0 24px;
-  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;       /* Отступы идут ВНУТРЬ, а не распирают вширь */
 }
 
 .dock-summary {
