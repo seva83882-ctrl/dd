@@ -314,32 +314,3 @@
     aspect-ratio: 1 / 1 !important;
   }
 }
-
-.dock-bar {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .dock-inner {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  /* Отодвигаем кнопку от правого края и делаем аккуратный размер */
-  .btn-max-cta {
-    margin-right: 4px !important;       /* Зазор от края экрана */
-    padding: 0 16px !important;         /* Компактные внутренние поля кнопки */
-    font-size: 0.82rem !important;      /* Чуть меньше шрифт, чтобы не распирало */
-    height: 42px !important;
-    flex-shrink: 0 !important;          /* Запрещаем сжимать кнопку */
-  }
-
-  .dock-meta {
-    font-size: 0.9rem !important;
-    white-space: nowrap !important;
-  }
