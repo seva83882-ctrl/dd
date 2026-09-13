@@ -104,6 +104,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: var(--dock-height);
   background: var(--bg-glass);
@@ -116,11 +117,16 @@
   align-items: center;
 }
 
+/* На ПК держится строго по центру контента */
 .dock-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .dock-summary {
@@ -129,38 +135,35 @@
 }
 
 .dock-meta {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-primary);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
-/* Кнопка записи в MAX */
+/* Кнопка записи */
 .btn-max-cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background-color: var(--accent-terra);
   color: #FFFFFF;
-  height: 44px;
-  padding: 0 20px;
+  height: 42px;
+  padding: 0 18px;
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
   font-weight: 500;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
   box-shadow: 0 4px 14px rgba(178, 76, 47, 0.25);
-  transition: background-color var(--time-fast) var(--ease-out),
-              transform var(--time-fast) var(--ease-out);
+  transition: background-color var(--time-fast) var(--ease-out);
 }
 
 .btn-max-cta:hover {
   background-color: var(--accent-terra-hover);
-}
-
-.btn-max-cta:active {
-  transform: scale(0.98);
 }
 
 .max-icon-embed {
@@ -169,6 +172,28 @@
   border-radius: 4px;
   object-fit: cover;
   flex-shrink: 0;
+}
+
+/* Для мобильных экранов */
+@media (max-width: 768px) {
+  .dock-inner {
+    padding: 0 16px; /* Безопасный отступ от физических краев экрана */
+  }
+
+  .dock-meta {
+    font-size: 0.85rem;
+  }
+
+  .btn-max-cta {
+    height: 38px;
+    padding: 0 14px;
+    font-size: 0.8rem;
+  }
+
+  .max-icon-embed {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* ==========================================================================
